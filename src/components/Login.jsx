@@ -1,14 +1,26 @@
+import { useRef } from 'react';
+import { useSession } from '../hooks/session-context';
+
 const Login = () => {
+  const { login } = useSession();
+  const userIdRef = useRef();
+  const userNameRef = useRef();
+
+  const submit = (evt) => {
+    evt.preventDefault();
+    login(userIdRef.current.value, userNameRef.current.value);
+  };
+
   return (
-    <>
+    <form onSubmit={submit}>
       <div>
-        User ID: <input type='text' />
+        User ID(숫자): <input type='text' ref={userIdRef} />
       </div>
       <div>
-        Password: <input type='password' />
+        User Name: <input type='text' ref={userNameRef} />
       </div>
-      <button>Login</button>
-    </>
+      <button type='submit'>Login</button>
+    </form>
   );
 };
 
