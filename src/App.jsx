@@ -7,7 +7,7 @@ import { SessionProvider } from './hooks/session-context';
 // import MemoTest from './test/memo';
 
 function App() {
-  const { count, plusCount } = useCount();
+  const { count } = useCount();
 
   return (
     <div className='App'>
@@ -17,7 +17,7 @@ function App() {
         </SessionProvider>
 
         <h2>Count: {count}</h2>
-        <Hello name='Hong' isMale={true} plusCount={plusCount} />
+        <Hello name='Hong' isMale={true} />
         {/* <Hello age={0} /> */}
         {/* <Hello name='홍길동' age={30}><h3>반갑습니다~</h3></Hello> */}
       </header>

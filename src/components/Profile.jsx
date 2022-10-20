@@ -4,7 +4,12 @@ import { useSession } from '../hooks/session-context';
 import { useCount } from '../hooks/counter-context';
 
 const Profile = () => {
-  const { session, logout } = useSession();
+  const {
+    session: {
+      loginUser: { name },
+    },
+    logout,
+  } = useSession();
   const { minusCount } = useCount();
 
   useEffect(() => {
@@ -13,7 +18,7 @@ const Profile = () => {
 
   return (
     <>
-      <div>User ID: {session.loginUser?.name}</div>
+      <div>User ID: {name}</div>
       <button onClick={logout}>Logout</button>
     </>
   );

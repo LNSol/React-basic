@@ -8,6 +8,12 @@ const Login = () => {
   const userIdRef = useRef();
   const userNameRef = useRef();
 
+  // fetch('/data/sample.json')
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log('data >>> ', data);
+  //   });
+
   useEffect(() => {
     plusCount();
   }, []);
