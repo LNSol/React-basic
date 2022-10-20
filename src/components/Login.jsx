@@ -1,10 +1,16 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { useSession } from '../hooks/session-context';
+import { useCount } from '../hooks/counter-context';
 
 const Login = () => {
   const { login } = useSession();
+  const { plusCount } = useCount();
   const userIdRef = useRef();
   const userNameRef = useRef();
+
+  useEffect(() => {
+    plusCount();
+  }, []);
 
   const submit = (evt) => {
     evt.preventDefault();

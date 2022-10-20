@@ -4,6 +4,7 @@ import { Hello } from './components/Hello';
 import { My } from './components/My';
 import { useCount } from './hooks/counter-context';
 import { SessionProvider } from './hooks/session-context';
+// import MemoTest from './test/memo';
 
 function App() {
   const { count, plusCount } = useCount();
@@ -21,6 +22,9 @@ function App() {
         {/* <Hello name='홍길동' age={30}><h3>반갑습니다~</h3></Hello> */}
       </header>
     </div>
+    // <>
+    //   <MemoTest />
+    // </>
   );
 }
 

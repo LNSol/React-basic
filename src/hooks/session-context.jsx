@@ -14,10 +14,10 @@ export const SessionProvider = ({ children }) => {
   const [session, setSession] = useState(sampleSession);
 
   const logout = () => setSession({ ...session, loginUser: null });
-  const addCartItem = (id, name) => {
+  const addCartItem = (id, name, price) => {
     setSession({
       ...session,
-      cart: session.cart.concat({ id, name }),
+      cart: session.cart.concat({ id, name, price }),
     });
   };
   const removeCartItem = (itemId) => {

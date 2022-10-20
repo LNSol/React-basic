@@ -1,13 +1,15 @@
 // import { v4 } from 'uuid';
+import { useEffect } from 'react';
 import { useSession } from '../hooks/session-context';
+import { useCount } from '../hooks/counter-context';
 
 const Profile = () => {
   const { session, logout } = useSession();
-  // const logout = evt => {
-  //   evt.preventDefault();
-  //   // session.loginUser = null;
-  //   session = {};
-  // }
+  const { minusCount } = useCount();
+
+  useEffect(() => {
+    minusCount();
+  }, []);
 
   return (
     <>
