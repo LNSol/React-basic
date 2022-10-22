@@ -1,7 +1,7 @@
 // import { v4 } from 'uuid';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useSession } from '../hooks/session-context';
-import { useCount } from '../hooks/counter-context';
+// import { useCount } from '../hooks/counter-context';
 
 const Profile = () => {
   const {
@@ -10,11 +10,11 @@ const Profile = () => {
     },
     logout,
   } = useSession();
-  const { minusCount } = useCount();
+  // const { minusCount } = useCount();
 
-  useEffect(() => {
-    minusCount();
-  }, []);
+  // useEffect(() => {
+  //   minusCount();
+  // }, []);
 
   return (
     <>

@@ -4,7 +4,7 @@ import { useCount } from '../hooks/counter-context';
 
 const Login = () => {
   const { login } = useSession();
-  const { plusCount } = useCount();
+  const { plusCount, minusCount } = useCount();
   const userIdRef = useRef();
   const userNameRef = useRef();
 
@@ -16,6 +16,8 @@ const Login = () => {
 
   useEffect(() => {
     plusCount();
+
+    return minusCount;
   }, []);
 
   const submit = (evt) => {
